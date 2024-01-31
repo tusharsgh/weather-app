@@ -6,11 +6,13 @@ function Forcast({data}) {
     main:{},
     weather:{},
   }]);
+  const[daily,setdaily] =useState(); 
 const [Date,setDate]=useState();
   useEffect(()=>{
     let prev=-1;
     const array=data.list;
     let x=[{}];
+
     for (let i = 0; i < array.length; i++) { 
    if(prev==-1) {
     prev=array[i].dt_txt;
@@ -20,10 +22,20 @@ const [Date,setDate]=useState();
     prev=array[i].dt_txt;
     x.push({dt_txt:moment(data.list[i].dt_txt.split(' ')[0]).format('MMMM DD, YYYY'),main:data.list[i].main,weather:data.list[i].weather});
   }
+  else {
+   let temp_min=parseInt(x[x.length-1].main.temp_min,10);
+   let temp_max=parseInt(x[x.length-1].main.temp_max,10)
+   temp_max=Math.max(temp_max,parseInt(data.list[i].main.temp_max));
+   temp_min=Math.min(temp_min,parseInt(data.list[i].main.temp_min));
+   x[x.length-1].main.temp_min=parseInt(temp_min,10);
+   x[x.length-1].main.temp_max=parseInt(temp_max,10);
+  }
     }
     setDaily(x);
+    
   },[data])
-    console.log(Daily);
+   console.log(Daily)
+    console.log(daily);
    
   return (
     <div>
