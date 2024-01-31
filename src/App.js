@@ -56,23 +56,21 @@ function App() {
  console.log(Day)
 
  const formatBackground = () => {
-  if (!Day) return "from-cyan-700 to-blue-700";
-  return Day==1
-    ? "from-yellow-700 to-orange-700"
-    : "from-cyan-700 to-blue-700";
+  if (!Day) return "from-[#243c5a] to-[#172554]";
+  return "from-[#E1F6FF]   to-[#004764] ";
 };
   return (
 
       <div className={` flex flex-col items-center justify-center mx-auto max-w-max mt-4 py-5 px-32 sm:px-12 bg-gradient-to-br ${formatBackground()}  h-fit shadow-xl shadow-gray-700 lg:mx-4 lg:mb-4`}>
         
       <div className="flex flex-row  items-center justify-center w-1/2  md:w-full">
-        <div className="flex-grow basis-1/2 self-start text-overflow-ellipsis whitespace-no-wrap w-1/2 " >
+        <div className="flex-grow text-white  basis-1/2 self-start text-overflow-ellipsis whitespace-no-wrap w-1/2 " >
         <Search onSearchChange={setCity} Day={Day} />
 </div>
         <div className=" flex flex-row flex-grow basis-1/2 items-center justify-center  w-1/2  md:w-full">
         <button
           onClick={() => setUnit(unit === "metric" ? "imperial" : "metric")}
-          className="text-xl font-light border rounded-md px-5 py-1 transition hover:scale-105 "
+          className="text-xl text-white  font-light border rounded-md px-5 py-1 transition hover:scale-105 "
         >
           {`°${unit === "metric" ? "C" : "F"}`}
         </button>

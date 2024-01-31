@@ -44,6 +44,10 @@ function Search({onSearchChange,Day}) {
                 maxwidth:'100px',
             
         }),
+        input: provided => ({
+          ...provided,
+          color: '#ffffff'
+        }),
 
         control: (provided, state) => ({
             ...provided,
@@ -53,16 +57,20 @@ function Search({onSearchChange,Day}) {
             boxShadow: state.isFocused ? '0 0 0 1px #ffffff' : null,
             backgroundColor: Day==1? null:null,
             color: '#ffffff',
-            whitespace: 'nowrap',
-            minwidth:'100px'
+            
    
         }),
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isFocused ? '#62B8FC' : null,
             color: state.isFocused ? '#FFFFFF' : null,
+            color:'black',
             midwidth:'100px'
         }),
+        singleValue :provided=>({
+          ...provided,
+          color: '#FFFFFF',
+        })
     }
   return (
 
