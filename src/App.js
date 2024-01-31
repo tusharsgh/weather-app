@@ -44,7 +44,7 @@ function App() {
   return (
 
       <div className=" flex flex-col items-center justify-center mx-auto max-w-max mt-4 py-5 px-32 sm:px-12 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl 
-      shadow-gray-700 lg:mx-4">
+      shadow-gray-700 lg:mx-4 lg:mb-4">
         
       <div className="flex flex-row  items-center justify-center w-1/2  md:w-full">
         <div className="flex-grow basis-1/2 self-start text-overflow-ellipsis whitespace-no-wrap w-1/2 " >
