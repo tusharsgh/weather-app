@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { AsyncPaginate } from "react-select-async-paginate";
 import AsyncSelect from 'react-select/async';
-function Search({onSearchChange}) {
+function Search({onSearchChange,Day}) {
     const [search, setSearch] = useState(null);
 
 
@@ -49,10 +49,10 @@ function Search({onSearchChange}) {
             ...provided,
         
             borderRadius: '20px',
-            border: '1px solid #FFFFFF',
-            boxShadow: state.isFocused ? '0 0 0 1px #FFFFFF' : null,
-            backgroundColor:'#088FFA',
-            color: '#FFFFFF',
+            border: '1px solid #ffffff',
+            boxShadow: state.isFocused ? '0 0 0 1px #ffffff' : null,
+            backgroundColor: Day==1? null:null,
+            color: '#ffffff',
             whitespace: 'nowrap',
             minwidth:'100px'
    
@@ -60,7 +60,7 @@ function Search({onSearchChange}) {
         option: (provided, state) => ({
             ...provided,
             backgroundColor: state.isFocused ? '#62B8FC' : null,
-            color: state.isFocused ? 'black' : null,
+            color: state.isFocused ? '#FFFFFF' : null,
             midwidth:'100px'
         }),
     }

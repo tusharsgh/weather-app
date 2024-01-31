@@ -16,7 +16,7 @@ console.log(data);
     <div className="flex flex-col items-center">
      <div className="flex items-center justify-center my-6">
         <p className="text-white text-xl font-extralight">
-            {time}| Local time: {date}
+            {time} | Local time: {date}
         </p>
      </div>
      <div className="flex items-center justify-center my-3">
