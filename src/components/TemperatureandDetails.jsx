@@ -9,7 +9,7 @@ import {
   UilArrowUp,
   UilArrowDown
 } from '@iconscout/react-unicons';
-function TemperatureandDetails({data,unit}) {
+function TemperatureandDetails({data,unit,}) {
   const [sunrise,setsunrise]=useState();
   const [sunset,setsunset]=useState();
   useEffect(()=>{
@@ -28,7 +28,7 @@ setsunset(y);
         <p >{data.weather[0].description}</p>
       </div>
 
-      <div className="flex items-center justify-between text-white py-3 flex-wrap gap-4">
+      <div className="flex items-center justify-center text-white py-3 flex-wrap gap-4">
         
       <img
           alt="weather"

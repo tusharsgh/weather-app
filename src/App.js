@@ -1,7 +1,7 @@
 import Search from './components/search';
 import { useEffect, useState } from "react";
 import './App.css';
-
+import moment from 'moment'
 import * as Unicons from '@iconscout/react-unicons';
 import Timeandlocation from './components/Timeandlocation';
 import TemperatureandDetails from './components/TemperatureandDetails';
@@ -16,7 +16,7 @@ function App() {
   const [forecast, setForecast] = useState(null);
   const [changeDegree,setDegree]=useState("metric");
   const [locatime,setLocatime] = useState();
-  const[sunsetTime,setSunsetTime] = useState();
+  const [Day,setDay] = useState();
   useEffect(()=>{
    
     const [lat, lon] = city.value.split(" ");
@@ -39,6 +39,7 @@ function App() {
       })
       .catch(console.log);
   },[city,unit])
+  
  console.log(currentWeather)
   return (
 
@@ -59,7 +60,7 @@ function App() {
         </div>
         </div>
       {currentWeather && <Timeandlocation data={currentWeather}/>}
-      {currentWeather && <TemperatureandDetails data={currentWeather} unit={changeDegree}/>}
+      {currentWeather && <TemperatureandDetails data={currentWeather} unit={changeDegree} />}
       {forecast && <Forcast data={forecast}/>}
      
       </div>
