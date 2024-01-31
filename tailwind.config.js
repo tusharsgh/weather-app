@@ -11,10 +11,10 @@ module.exports = {
       'xl': {'max': '1279px'},
       // => @media (max-width: 1279px) { ... }
 
-      'lg': {'max': '1023px'},
+      'lg': {'max': '1070px'},
       // => @media (max-width: 1023px) { ... }
 
-      'md': {'max': '767px'},
+      'md': {'max': '740px'},
       // => @media (max-width: 767px) { ... }
 
       'sm': {'max': '629px'},
