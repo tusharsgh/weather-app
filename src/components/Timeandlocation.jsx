@@ -11,7 +11,7 @@ useEffect(()=>{
     setTime(currTime);
     setDate(currDate);
 },[data])
-console.log(time);
+console.log(data);
   return (
     <div className="flex flex-col items-center">
      <div className="flex items-center justify-center my-6">

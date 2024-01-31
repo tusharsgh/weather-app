@@ -14,7 +14,9 @@ function App() {
    const [unit,setUnit]=useState("metric");
   const [currentWeather, setCurrentWeather] = useState(null);
   const [forecast, setForecast] = useState(null);
-  const [changeDegree,setDegree]=useState("metric")
+  const [changeDegree,setDegree]=useState("metric");
+  const [locatime,setLocatime] = useState();
+  const[sunsetTime,setSunsetTime] = useState();
   useEffect(()=>{
    
     const [lat, lon] = city.value.split(" ");
@@ -37,32 +39,7 @@ function App() {
       })
       .catch(console.log);
   },[city,unit])
- console.log(changeDegree);
-
-  //  const handleOnsearchChange=(searchData)=>{
-  //    setCity(searchData);
-  //   const [lat, lon] = searchData.value.split(" ");
-   
-  //   const currentWeatherFetch = fetch(
-  //     `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-  //   );
-  //   const forecastFetch = fetch(
-  //     `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
-  //   );
-
-  //   Promise.all([currentWeatherFetch, forecastFetch])
-  //     .then(async (response) => {
-  //       const weatherResponse = await response[0].json();
-  //       const forcastResponse = await response[1].json();
-
-  //       setCurrentWeather({ city: searchData.label, ...weatherResponse });
-  //       setForecast({ city: searchData.label, ...forcastResponse });
-  //     })
-  //     .catch(console.log);
-
-      
-  //  }
-  console.log(forecast);
+ console.log(currentWeather)
   return (
 
       <div className=" flex flex-col items-center justify-center mx-auto max-w-max mt-4 py-5 px-32 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl 
