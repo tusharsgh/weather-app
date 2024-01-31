@@ -56,8 +56,8 @@ function App() {
  console.log(Day)
 
  const formatBackground = () => {
-  if (!Day) return "from-[#243c5a] to-[#172554]";
-  return "from-[#E1F6FF]   to-[#004764] ";
+  if (!Day) return "from-[#1D4ED8] to-[#070834]";
+  return "from-[#BFDBFE]   to-[#004764]  ";
 };
   return (
 

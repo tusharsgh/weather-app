@@ -57,7 +57,7 @@ setsunset(y);
           </div>
         </div>
       </div>
-      <div className="flex flex-row sm:flex-col sm:justify-start sm:items-start sm:space-y-2 items-center justify-center  space-x-2 text-white text-sm py-2 flex-wrap">
+      <div className="flex flex-row sm:flex-col sm:justify-start sm:items-start sm:space-y-2 items-center justify-center  space-x-2 sm:space-x-0 text-white text-sm py-2 flex-wrap">
       <div className="flex  items-center justify-center">
       <UilSun />
       Rise:<span className="font-medium ml-1">{sunrise}</span>
