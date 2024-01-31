@@ -1,7 +1,7 @@
-# Getting Started with Create React App
+# Weather Application
 
 
-This Weather App provides real-time weather information using the OpenWeather API. To get started, follow the steps below.
+This Weather App provides real-time weather information using the OpenWeather API.
 
 ## Features
 
