@@ -32,6 +32,19 @@ function App() {
       .then(async (response) => {
         const weatherResponse = await response[0].json();
         const forcastResponse = await response[1].json();
+        
+        const timezone =weatherResponse.timezone;
+        const timezoneInMinutes = timezone / 60;
+        const currtime = moment().utcOffset(timezoneInMinutes).format("HH:mm");
+        const sunrisetime = weatherResponse.sys.sunrise;
+        const sunsettime = weatherResponse.sys.sunset;
+       const  x = moment.utc(sunrisetime,'X').add(timezone,'seconds').format('HH:mm');
+       const  y= moment.utc(sunsettime,'X').add(timezone,'seconds').format('HH:mm');
+        if(currtime==sunsettime||currtime >sunsettime||currtime<sunrisetime){
+          setDay(0);
+        }else{
+          setDay(1);
+        }
 
         setCurrentWeather({ city: city.label, ...weatherResponse });
         setForecast({ city: city.label, ...forcastResponse });
@@ -40,7 +53,7 @@ function App() {
       .catch(console.log);
   },[city,unit])
   
- console.log(currentWeather)
+ console.log(Day)
   return (
 
       <div className=" flex flex-col items-center justify-center mx-auto max-w-max mt-4 py-5 px-32 sm:px-12 bg-gradient-to-br from-cyan-700 to-blue-700 h-fit shadow-xl 
