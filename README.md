@@ -31,7 +31,9 @@ Before running the app, make sure you have the following:
    npm install
 2. Add your Api keys to Api.js:
  ```bash
- WEATHER_API_URL=you-api-keys
+ WEATHER_API_URL=Weather_APP_URL
+ WEATHER_API_KEY=Weather_APP_API_KEY
+
 ```
 
 
